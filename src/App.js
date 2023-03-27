@@ -1,4 +1,5 @@
 import "./styles.css";
+import Form from "./Components/Form";
 
 export default function App() {
   return (
@@ -48,20 +49,7 @@ export default function App() {
             <p>email address</p>
             <p>po box?</p>
           </div>
-          <div>
-            <form>
-              <label>Name
-              <input type='text' placeholder='name'/>
-              </label>
-              <label>Email
-              <input type='text' placeholder='email'/>
-              </label>
-              <label>Message
-              <input type='text' placeholder='message'/>
-              </label>
-              <button>Submit</button>
-            </form>
-          </div>
+          <Form />
           <div className="Footer">Footer</div>
         </div>
     </div>
