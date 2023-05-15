@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+//need on submit
 
 export default function Form() {
 
@@ -27,7 +28,7 @@ export default function Form() {
             <form onSubmit={resetValues}>
             <label>Name
             <input
-                className="nameInput-text"
+                class="w3-input w3-border"
                 name="nameInput"
                 onChange={e => handleNameInput(e.target.value)}
                 placeholder="Name"
@@ -37,7 +38,7 @@ export default function Form() {
             </label>
             <label>Email
             <input
-                className="emailInput-text"
+                class="w3-input w3-border" 
                 name="emailInput"
                 onChange={e => handleEmailInput(e.target.value)}
                 placeholder="Name"
@@ -47,7 +48,7 @@ export default function Form() {
             </label>
             <label>Message
             <input
-                className="messageInput-text"
+                class="w3-input w3-border" 
                 name="messageInput"
                 onChange={e => handleMessageInput(e.target.value)}
                 placeholder="Name"
@@ -55,7 +56,9 @@ export default function Form() {
                 value={messageInput}
             />
             </label>
-            <button>Submit</button>
+            <button class="w3-button w3-black">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+              </button>
             </form>
             <div>
                 <h3>{nameInput}</h3>
