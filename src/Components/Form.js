@@ -28,7 +28,7 @@ export default function Form() {
             <form onSubmit={resetValues}>
             <label>Name
             <input
-                class="w3-input w3-border"
+                className="w3-input w3-border"
                 name="nameInput"
                 onChange={e => handleNameInput(e.target.value)}
                 placeholder="Name"
@@ -38,7 +38,7 @@ export default function Form() {
             </label>
             <label>Email
             <input
-                class="w3-input w3-border" 
+                className="w3-input w3-border" 
                 name="emailInput"
                 onChange={e => handleEmailInput(e.target.value)}
                 placeholder="Name"
@@ -48,7 +48,7 @@ export default function Form() {
             </label>
             <label>Message
             <input
-                class="w3-input w3-border" 
+                className="w3-input w3-border" 
                 name="messageInput"
                 onChange={e => handleMessageInput(e.target.value)}
                 placeholder="Name"
@@ -56,8 +56,8 @@ export default function Form() {
                 value={messageInput}
             />
             </label>
-            <button class="w3-button w3-black">
-              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            <button className="w3-button w3-black">
+              <i className="fa fa-paper-plane"></i> SEND MESSAGE
               </button>
             </form>
             <div>

@@ -1,18 +1,87 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 //class="w3-container w3-black w3-center w3-opacity w3-padding-64"
 
+// let api_football_key = 
+let url = 'https://v1.formula-1.api-sports.io/races'
+let year = new Date().getFullYear()
+//FIX
+
 export default function Pick() {
+
+    const initialRaceInfo = {
+        date: '',
+        distance: '',
+        name: '',
+        location: '',
+        image: ''
+    }
+
+    const [raceInfo, setRaceInfo] = useState(initialRaceInfo);
+
+    const getNextRace = () => {
+        axios.get(`${url}?season=${year}`,
+            {
+                headers: {
+                    "x-rapidapi-key": api_football_key,
+                    "x-rapidapi-host": "api-formula-1.p.rapidapi.com/"
+                }
+            })
+            .then(res => {
+                //console.log(res.data.response.find(el => el.status === 'Scheduled' && el.type === 'Race'))
+                let data = res.data.response.find(el => el.status === 'Scheduled' && el.type === 'Race')
+
+                let { date, distance, competition, circuit } = data
+                setRaceInfo({
+                    date,distance,
+                    location: `${competition.location.city}, ${competition.location.country}`,
+                    name: competition.name,
+                    image: circuit.image
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    useEffect(() => {
+        getNextRace()
+    }, []);
+
+    const dateFormat = (str) => {
+        //make more inclusive ; esp day
+        let strArray = Array.from(str.split('-'))
+        //^^ this makes an ordered list, not an array
+        // let month = strArray[1].trim()
+        // let day = strArray[3].slice(0,3)
+        // let year = strArray[0]
+
+        let month = str.substring(5,7).trim()
+        let day = str.substring(8,10)
+        let year = str.substring(0,4)
+
+        return `${month}/${day}/${year}`
+    }
+
     return (
-        <div class="w3-row-padding w3-padding-16 w3-container w3-white w3-hover-white">
-        <div class="w3-content">
-            <div class="w3-twothird">
+        <div className="w3-row-padding w3-padding-16 w3-container w3-white w3-hover-white">
+        <div className="w3-content">
+            <div className="w3-twothird">
                 <h1>Upload Schedule</h1>
 
-                <p class="w3-text-grey">We record every Sunday race!</p>
-                <p class="w3-text-grey">f1 schedule api ??</p>
+                <p className="w3-text-grey">We record every race day! We'll see you DATE when they race in </p>
+
+
+                <p>{raceInfo.name && `Race Name: ${raceInfo.name}`}</p>
+                <p>{raceInfo.date && `Race Date: ${dateFormat(raceInfo.date)}`}</p>
+                <p>{raceInfo.location && `Race Location: ${raceInfo.location}`}</p>
+                <p>{raceInfo.distance && `Race Distance: ${raceInfo.distance}`}</p>
+                {raceInfo.image && <img className="fa fa-diamond w3-margin-bottom" src={raceInfo.image} width="200" />}
+
+
             </div>
-            <div class="w3-third w3-center">
-                <img class="fa fa-anchor w3-padding-16" src={require("../Assets/Calendar.jpg")} width="275"/>
+            <div className="w3-third w3-center">
+                <img className="fa fa-anchor w3-padding-16" src={require("../Assets/Calendar.jpg")} width="275"/>
             </div>
         </div>
     </div>
