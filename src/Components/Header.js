@@ -21,7 +21,9 @@ export default function AboutF1() {
                             <NavLink to="/"><button className="w3-bar-item w3-button" >Home</button></NavLink>
                             <NavLink to="/about"><button className="w3-bar-item w3-button">About Us</button></NavLink>
                             <NavLink to="/contact"><button className="w3-bar-item w3-button">Contact Us</button></NavLink>
-                            <NavLink to="/contact"><button className="w3-bar-item w3-button">Login</button></NavLink>
+                            <NavLink to="/login"><button className="w3-bar-item w3-button">Login</button></NavLink>
+                            <NavLink to="/messages"><button className="w3-bar-item w3-button">Messages</button></NavLink>
+                            <NavLink to="/upload"><button className="w3-bar-item w3-button">Picks</button></NavLink>
                         </div>
                     </nav>
                 </div>
