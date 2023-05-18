@@ -8,6 +8,6 @@
   .w3-bar, button {font-family: "Quicksand", sans-serif}
   .quicksand {font-family: "Quicksand", sans-serif}
 
-  .icon {margin-left: 15px;}
+  .icon {margin-left: 15px; display: inline;}
   
   .inline {display: inline}

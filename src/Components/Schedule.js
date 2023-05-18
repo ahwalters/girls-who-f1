@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Calendar from 'react-calendar'
 //class="w3-container w3-black w3-center w3-opacity w3-padding-64"
 
-// let api_football_key = 
+let api_football_key = process.env.REACT_APP_API_FOOTBALL_KEY
 let url = 'https://v1.formula-1.api-sports.io/races'
-let year = new Date().getFullYear()
+let currentYear = new Date().getFullYear()
 //FIX
 
 export default function Pick() {
@@ -20,7 +21,7 @@ export default function Pick() {
     const [raceInfo, setRaceInfo] = useState(initialRaceInfo);
 
     const getNextRace = () => {
-        axios.get(`${url}?season=${year}`,
+        axios.get(`${url}?season=${currentYear}`,
             {
                 headers: {
                     "x-rapidapi-key": api_football_key,
@@ -63,20 +64,24 @@ export default function Pick() {
         return `${month}/${day}/${year}`
     }
 
+    const calendarOnClick = (value, evt) => {
+        evt.preventDefault();
+        console.log(value)
+    }
+
     return (
         <div className="w3-row-padding w3-padding-16 w3-container w3-white w3-hover-white">
         <div className="w3-content">
             <div className="w3-twothird">
                 <h1>Upload Schedule</h1>
 
-                <p className="w3-text-grey">We record every race day! We'll see you DATE when they race in </p>
+                <p>{`We record every race day! We'll see you ${raceInfo.date ? dateFormat(raceInfo.date) : 'next time'} when they race in ${raceInfo.location ? raceInfo.location : 'unknown'}!`}</p>
 
 
-                <p>{raceInfo.name && `Race Name: ${raceInfo.name}`}</p>
-                <p>{raceInfo.date && `Race Date: ${dateFormat(raceInfo.date)}`}</p>
-                <p>{raceInfo.location && `Race Location: ${raceInfo.location}`}</p>
-                <p>{raceInfo.distance && `Race Distance: ${raceInfo.distance}`}</p>
+                <p className="w3-text-grey">{raceInfo.name && `${raceInfo.name}`}</p>
+                <p className="w3-text-grey">{raceInfo.distance && `Distance: ${raceInfo.distance}`}</p>
                 {raceInfo.image && <img className="fa fa-diamond w3-margin-bottom" src={raceInfo.image} width="200" />}
+                <Calendar onClickDay={calendarOnClick}/>
 
 
             </div>

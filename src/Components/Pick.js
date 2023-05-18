@@ -5,11 +5,7 @@ import { CloseButton } from '@chakra-ui/react'
 
 //need to verify driver input before passing back data !
 
-// const dotenv = require('dotenv');
-// dotenv.config()
-
-// let api_football_key = 
-// let api_football_key = process.env.REACT_APP_API_FOOTBALL_KEY
+let api_football_key = process.env.REACT_APP_API_FOOTBALL_KEY
 let url = 'https://v1.formula-1.api-sports.io/drivers'
 
 export default function Pick() {
@@ -118,7 +114,7 @@ export default function Pick() {
     }
 
     return (
-        <div className="w3-row-padding w3-padding-16 w3-container w3-white w3-hover-white">
+        <div className="w3-row-padding w3-padding-16 w3-container">
             <div className="w3-content">
                 <h1 className="inline">
                     <img width="60" height="60" src="https://img.icons8.com/ios/60/f1-race-car-top-veiw.png" alt="f1-race-car-top-veiw" />

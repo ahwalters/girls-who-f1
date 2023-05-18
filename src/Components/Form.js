@@ -1,70 +1,82 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 //need on submit
+
+
+//<form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+
+//VALIDATE INPUTS
 
 export default function Form() {
 
-    const useInput = initialValue => {
-        const [value, setValue] = useState(initialValue);
-        const handleChanges = updatedValue => {
-          setValue(updatedValue);
-        };
-        return [value, setValue, handleChanges];
-      };
+  const useInput = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    const handleChanges = updatedValue => {
+      setValue(updatedValue);
+    };
+    return [value, setValue, handleChanges];
+  };
 
-        const [nameInput, setNameInput, handleNameInput] = useInput("");
-        const [emailInput, setEmailInput, handleEmailInput] = useInput("");
-        const [messageInput, setMessageIput, handleMessageInput] = useInput("");
-      
-        const resetValues = e => {
-          e.preventDefault();
-          setNameInput("");
-          setEmailInput("");
-          setMessageIput("");
-        };
-    
+  const [nameInput, setNameInput, handleNameInput] = useInput("");
+  const [emailInput, setEmailInput, handleEmailInput] = useInput("");
+  const [messageInput, setMessageIput, handleMessageInput] = useInput("");
 
-    return (
-        <div>
-            <form onSubmit={resetValues}>
+  const resetValues = () => {
+    setNameInput("");
+    setEmailInput("");
+    setMessageIput("");
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    resetValues()
+  }
+
+
+  return (
+    <div>
+      <div class="w3-col m7">
+        <form class="w3-container w3-card-4 w3-padding-16 w3-white" onSubmit={onSubmit}>
+          <div class="w3-section">
             <label>Name
-            <input
-                className="w3-input w3-border"
+              <input
+                className="w3-input"
                 name="nameInput"
                 onChange={e => handleNameInput(e.target.value)}
-                placeholder="Name"
                 type="text"
                 value={nameInput}
-            />
+                required
+              />
             </label>
+          </div>
+          <div class="w3-section">
             <label>Email
-            <input
-                className="w3-input w3-border" 
+              <input
+                className="w3-input"
                 name="emailInput"
                 onChange={e => handleEmailInput(e.target.value)}
-                placeholder="Name"
                 type="text"
                 value={emailInput}
-            />
+                required
+              />
             </label>
+          </div>
+          <div class="w3-section">
             <label>Message
-            <input
-                className="w3-input w3-border" 
+              <input
+                className="w3-input"
                 name="messageInput"
                 onChange={e => handleMessageInput(e.target.value)}
-                placeholder="Name"
                 type="text"
                 value={messageInput}
-            />
+                required
+              />
             </label>
-            <button className="w3-button w3-black">
-              <i className="fa fa-paper-plane"></i> SEND MESSAGE
-              </button>
-            </form>
-            <div>
-                <h3>{nameInput}</h3>
-                <h3>{emailInput}</h3>
-                <h3>{messageInput}</h3>
-            </div>
           </div>
-    )
+          <button className="w3-button w3-black">
+            <i className="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  )
 }

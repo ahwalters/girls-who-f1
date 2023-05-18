@@ -11,6 +11,7 @@ export default function AboutF1() {
                 
                 <button class="w3-bar-item w3-button">
                 <img src={require("../Assets/Logo.png")} alt="logo" width="100"/>
+                Girls Who F1
                 </button>
                 <nav>
                     <div className="w3-right w3-hide-small">

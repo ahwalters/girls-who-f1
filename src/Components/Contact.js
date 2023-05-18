@@ -3,18 +3,20 @@ import Form from "./Form";
 
 export default function Contact() {
 
-    //import icons ???
+  //import icons ???
 
-    return (
-      <div className="w3-container w3-light-grey" id="contact">
-        <h3 className="w3-center">CONTACT</h3>
-        <p className="w3-center w3-large">Get in touch with us at:</p>
-        <div>
-          <p><i className="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> New Jersey, US</p>
-          <p><i className="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 12345678</p>
-          <p><i className="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+  return (
+    <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+      <div class="w3-row">
+        <div class="w3-col m5">
+          <div class="w3-padding-16"><span class="w3-xlarge w3-border-black w3-bottombar">Contact Us</span></div>
+          <p><i class="fa fa-map-marker w3-text-black w3-xxlarge"></i>New Jersey, US</p>
+          <p><i className="fa fa-phone w3-xxlarge"></i> Phone: +00 12345678</p>
+          <p><i className="fa fa-envelope w3-xxlarge"> </i> Email: mail@mail.com</p>
           <br></br>
-          <Form />
+          <p>Send us a message and we'll get back to you in 1-2 business days!</p>
+        </div>
+        <Form />
       </div>
     </div>
     )
