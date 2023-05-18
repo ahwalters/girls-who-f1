@@ -4,7 +4,10 @@ import React, { useState } from "react";
 
 //<form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
 
+//trying to disable button until all fields are filled out
+
 //VALIDATE INPUTS
+//yup
 
 export default function Form() {
 
@@ -72,7 +75,7 @@ export default function Form() {
               />
             </label>
           </div>
-          <button className="w3-button w3-black">
+          <button className={`w3-button w3-black ${!nameInput ? "w3-disabled w3-btn:disabled w3-button:disabled" : ""}`}>
             <i className="fa fa-paper-plane"></i> SEND MESSAGE
           </button>
         </form>

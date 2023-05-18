@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Calendar from 'react-calendar'
-//class="w3-container w3-black w3-center w3-opacity w3-padding-64"
 
 let api_football_key = process.env.REACT_APP_API_FOOTBALL_KEY
 let url = 'https://v1.formula-1.api-sports.io/races'
 let currentYear = new Date().getFullYear()
-//FIX
 
 export default function Pick() {
 
@@ -29,7 +27,6 @@ export default function Pick() {
                 }
             })
             .then(res => {
-                //console.log(res.data.response.find(el => el.status === 'Scheduled' && el.type === 'Race'))
                 let data = res.data.response.find(el => el.status === 'Scheduled' && el.type === 'Race')
 
                 let { date, distance, competition, circuit } = data
