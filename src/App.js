@@ -19,7 +19,7 @@ import Upload from "./Components/UploadPick";
 export default function App() {
   return (
     
-    <div className="App .w3-sand w3-hover-sand">
+    <div className="App w3-sand">
       <Header />
       <Routes>
         <Route path='/' element={[<Intro/>, <Follow/>,<SpotifyPlayer />, <AboutF1/>, <Schedule />, <Pick />]}/>

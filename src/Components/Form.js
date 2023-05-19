@@ -37,9 +37,9 @@ export default function Form() {
 
   return (
     <div>
-      <div class="w3-col m7">
-        <form class="w3-container w3-card-4 w3-padding-16 w3-white" onSubmit={onSubmit}>
-          <div class="w3-section">
+      <div className="w3-col m7">
+        <form className="w3-container w3-card-4 w3-padding-16 w3-white" onSubmit={onSubmit}>
+          <div className="w3-section">
             <label>Name
               <input
                 className="w3-input"
@@ -51,7 +51,7 @@ export default function Form() {
               />
             </label>
           </div>
-          <div class="w3-section">
+          <div className="w3-section">
             <label>Email
               <input
                 className="w3-input"
@@ -63,7 +63,7 @@ export default function Form() {
               />
             </label>
           </div>
-          <div class="w3-section">
+          <div className="w3-section">
             <label>Message
               <input
                 className="w3-input"

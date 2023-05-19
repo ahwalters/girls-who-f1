@@ -34,10 +34,10 @@ export default function Login() {
 
 
   return (
-    <div class="w3-padding-64 w3-container w3-center">
-      <div class="w3-half">
-        <form class="w3-container w3-card-4 w3-padding-16 w3-white" onSubmit={onSubmit}>
-          <div class="w3-section">
+    <div className="w3-padding-64 w3-container w3-center">
+      <div className="w3-half">
+        <form className="w3-container w3-card-4 w3-padding-16 w3-white" onSubmit={onSubmit}>
+          <div className="w3-section">
             <label>Username
               <input
                 className="w3-input"
@@ -49,7 +49,7 @@ export default function Login() {
               />
             </label>
           </div>
-          <div class="w3-section">
+          <div className="w3-section">
             <label>Password
               <input
                 className="w3-input"
@@ -70,10 +70,10 @@ export default function Login() {
         <div className="w3-container">
         <h4>Log in to access the admin portal.</h4>
         <ul>
-            <p><i class="fa fa-sharp fa-light fa-user w3-margin-right"></i>Authenticated using firebase</p>
-            <p><i class="fa fa-sharp fa-light fa-arrow-up w3-margin-right"></i>Upload weekly picks to server</p>
-            <p><i class="fa fa-sharp fa-light fa-cloud w3-margin-right"></i>Access and respond to messages</p>
-            <p><i class="fa fa-sharp fa-light fa-gear w3-margin-right"></i>Update...</p>
+            <p><i className="fa fa-sharp fa-light fa-user w3-margin-right"></i>Authenticated using firebase</p>
+            <p><i className="fa fa-sharp fa-light fa-arrow-up w3-margin-right"></i>Upload weekly picks to server</p>
+            <p><i className="fa fa-sharp fa-light fa-cloud w3-margin-right"></i>Access and respond to messages</p>
+            <p><i className="fa fa-sharp fa-light fa-gear w3-margin-right"></i>Update...</p>
         </ul>
         </div>
       </div>

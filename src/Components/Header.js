@@ -5,15 +5,12 @@ export default function AboutF1() {
 
     return (
         <div>
-            <header></header>
+
             <div className="w3-top">
                 <div className="w3-bar w3-white w3-wide w3-padding w3-card">
-
-
-
                     <div className="">
-                        <button class="w3-bar-item w3-button">
-                            <img src={require("../Assets/Logo.png")} alt="logo" width="80" />
+                        <button className="w3-bar-item w3-button">
+                            <img src={require("../Assets/Logo_cropped.png")} alt="logo" width="80" />
                         </button>
                     </div>
                     <nav>
@@ -28,8 +25,11 @@ export default function AboutF1() {
                     </nav>
                 </div>
             </div>
-            <header class="w3-container w3-center" style={{paddingTop:96, paddingBottom: 32, paddingLeft: 16, paddingRight: 16}}>
-                <h1 class="w3-margin w3-jumbo">GIRLS WHO F1</h1>
+
+            <header className="w3-container w3-center w3-sand" style={{paddingTop:96, paddingBottom: 32, paddingLeft: 16, paddingRight: 16}}>
+                {//<h1 className="w3-margin w3-jumbo">GIRLS WHO F1</h1>
+                }
+                <img src={require("../Assets/Logo_text_black.png")} className="fa w3-margin"/>
             </header>
         </div>
     )

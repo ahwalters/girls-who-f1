@@ -114,7 +114,7 @@ export default function Pick() {
     }
 
     return (
-        <div className="w3-row-padding w3-padding-16 w3-container">
+        <div className="w3-row-padding w3-padding-16 w3-container w3-sand">
             <div className="w3-content">
                 <h1 className="inline">
                     <img width="60" height="60" src="https://img.icons8.com/ios/60/f1-race-car-top-veiw.png" alt="f1-race-car-top-veiw" />
@@ -157,17 +157,18 @@ export default function Pick() {
                 <p className="w3-text-grey">Notes to dev:</p>
                 <p className="w3-text-grey">Is pick based on race?</p>
             </div>
-            <div className="w3-row-padding w3-center w3-margin-top">
+            <div className="w3-row-padding w3-center w3-margin-top w3-sand">
                 {
                     driverPicks.map((el, index) => {
                         if (el.valid) {
                             return (
                                 <div className="w3-third" key={index}>
-                                    <div className="w3-card w3-container w3-white w3-hover-white">
-                                    <CloseButton size='md' onClick={()=>resetPick(el.user)}/>
-                                        <h3>{`${el.user}'s Pick:`}</h3><br></br>
+                                    <div className="w3-card w3-container w3-light-grey">
+                                    <CloseButton size='md' onClick={()=>resetPick(el.user)} className="w3-right"/>
+                                        <h3>{`${el.user}'s Pick:`}</h3>
+                                        <p style={{ fontWeight : 'bold', fontSize:20}}>{`${el.pick.name}`}</p>
+                                        <br></br>
                                         <img className="fa fa-diamond w3-margin-bottom" src={el.pick.image} width="200" />
-                                        <p style={{ fontWeight : 'bold'}}>{`${el.pick.name}`}</p>
                                         <p>{el.pick.abbr && `Abbreviation: ${el.pick.abbr}`}</p>
                                         <p>{el.pick.country && `Country: ${el.pick.country}`}</p>
                                         <p>{`Grand Prix Entered: ${el.pick.grands_prix_entered}`}</p>
@@ -180,7 +181,7 @@ export default function Pick() {
                         else {
                             return (
                                 <div className="w3-third" key={index}>
-                                    <div className="w3-card w3-container w3-white w3-hover-white">
+                                    <div className="w3-card w3-container w3-light-grey">
                                         <h3>{`${el.user}'s Pick:`}</h3><br></br>
                                         <p>{`${el.user} hasn't uploaded their pick yet`}</p>
                                     </div>

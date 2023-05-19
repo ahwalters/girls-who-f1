@@ -3,7 +3,7 @@ import React from "react";
 export default function AboutF1() {
 
     return (
-        <div>
+        <div className="w3-sand">
         <h2 className="quicksand">Follow our Social Media!</h2>
         <div>
           <img width="50" height="50" src="https://img.icons8.com/ios/50/spotify--v1.png" alt="spotify--v1" className="icon"/>
